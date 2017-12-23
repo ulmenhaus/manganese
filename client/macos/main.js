@@ -14,7 +14,7 @@ function createWindow () {
     frame: false}
 			 );
 
-  win.loadURL('https://docker.slack.com');
+  win.loadURL('https://web.telegram.org');
 
   win.webContents.on('new-window', (event, url, frameName, disposition, options, additionalFeatures) => {
     event.preventDefault();
