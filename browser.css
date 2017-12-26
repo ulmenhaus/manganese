@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.space {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.chatcontainer {
+    position: fixed;
+    width: calc(100% - 75px);
+    left: 75px;
+    height: 100%;
+    top: 0px;
+}
+
+.pageview {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.leftbar {
+    position: fixed;
+    height: 100%;
+    width: 75px;
+    background: #2e5766;
+}
+
+.leftbarbutton {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+    color:  #4d8ea5;
+    font-style:  courier;
+    font-size: 12px;
+}
+
+.leftbaricon {
+    width: 30px;
+    border-radius: 35px;
+}
+
+.topbar {
+    position: fixed;
+    width: 100%;
+    height: 77px;
+    background-color: #2e5766;
+    border: 1px solid white;
+    color: white;
+}

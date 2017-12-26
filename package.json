@@ -1,0 +1,9 @@
+{
+  "name": "newtestapp1",
+  "version": "0.1.0",
+  "main": "main.js",
+  "dependencies": {
+    "electron": "^1.6.10",
+    "jquery": "^2.2.4"
+  }
+}

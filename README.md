@@ -65,10 +65,10 @@ spaces:
 # Prototype
 
 - Support multiple pages with key combo
-- Add page with hard-coded pages
+- Add sidebar with hard-coded pages
 - Support hide-show sidebar
 - Add/Close page
-- Add space bar with hard-coded spaces (Chasper read? #666666?)
+- Add space bar with hard-coded spaces (Chasper red? #666666?)
 - Configurage spaces and pages in yaml
 - Hack gmail to remove sidebar
 - README with screenshots
