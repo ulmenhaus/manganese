@@ -64,4 +64,16 @@ onload = function() {
     $(".space").hide()
     $("#space" + e.key).show()
   });
+
+  var wv = document.querySelector("#space1_view6")
+  wv.addEventListener('did-finish-load', () => {
+    var contents = wv.getWebContents();
+    contents.executeJavaScript('setTimeout(function() { toDestroy = elem = document.getElementsByClassName("aeN")[0]; toDestroy.parentNode.removeChild(toDestroy) }, 7000);')
+  })
+
+  var wv2 = document.querySelector("#space1_view5")
+  wv2.addEventListener('did-finish-load', () => {
+    var contents = wv2.getWebContents();
+    contents.executeJavaScript('setTimeout(function() { toDestroy = elem = document.getElementsByClassName("aeN")[0]; toDestroy.parentNode.removeChild(toDestroy) }, 7000);')
+  })
 };
