@@ -117,26 +117,38 @@ onload = function() {
     body += '<div class="space" id="space' + index + '"><div class="leftbar">'
     body +=  '<div class="leftbarbutton">' + space.name + '<br /><br /></div>'
     for (var j=0; j<space.pages.length; j++) {
+      var pageIndex = (j == 9) ? 0 : (j + 1)
       var page = space.pages[j]
-      body += '<div class="leftbarbutton"><img class="leftbaricon" src="' + page.icon + '" /><br />' + index + ' ' + page.name + '</div>'
+      body += '<div class="leftbarbutton"><img class="leftbaricon" src="' + page.icon + '" /><br />' + pageIndex + ' ' + page.name + '</div>'
     }
     body += '</div><div class="chatcontainer">'
     for (var j=space.pages.length - 1; j>=0; j--) {
+      var pageIndex = (j == 9) ? 0 : (j + 1)
       var page = space.pages[j]
-      body += '<webview id="space' + index + '_view' + (j + 1) + '" class="pageview" src="' + page.url + '"></webview>'
+      body += '<webview id="space' + index + '_view' + pageIndex + '" class="pageview" src="' + page.url + '"></webview>'
     }
     body += '</div></div>'
   }
   topbar += '</div>'
   $("body").html(body + topbar)
+
   var currentSpace = spaces.length;
+  var currentPage = 1;
 
   document.addEventListener('keydown', (e) => {
     if (!e.getModifierState("Control") || isNaN(e.key))
       return
+    currentPage = parseInt(e.key)
     $(".pageview").hide()
     $("#space" + currentSpace + "_view" + e.key).show()
     $("#space" + currentSpace + "_view" + e.key).focus()
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!e.getModifierState("Control") || e.key != "r")
+      return
+    var wv = document.querySelector("#space" + currentSpace + "_view" + currentPage)
+    wv.goToIndex(0);
   });
 
 
