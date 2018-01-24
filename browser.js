@@ -104,6 +104,13 @@ spaces = [
   },
 ]
 
+let currentSpace;
+let currentPage;
+
+function focusActiveSpace() {
+    $("#space" + currentSpace + "_view" + currentPage).focus()
+}
+
 // TODO refactor!
 onload = function() {
   // TODO react would be better
@@ -125,15 +132,15 @@ onload = function() {
     for (var j=space.pages.length - 1; j>=0; j--) {
       var pageIndex = (j == 9) ? 0 : (j + 1)
       var page = space.pages[j]
-      body += '<webview id="space' + index + '_view' + pageIndex + '" class="pageview" src="' + page.url + '"></webview>'
+      body += '<webview id="space' + index + '_view' + pageIndex + '" class="pageview" src="' + page.url + '" allowpopups></webview>'
     }
     body += '</div></div>'
   }
   topbar += '</div>'
   $("body").html(body + topbar)
 
-  var currentSpace = spaces.length;
-  var currentPage = 1;
+  currentSpace = spaces.length;
+  currentPage = 1;
 
   document.addEventListener('keydown', (e) => {
     if (!e.getModifierState("Control") || isNaN(e.key))
