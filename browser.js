@@ -50,6 +50,7 @@ spaces = [
   {
     name: "News",
     pages: [
+/* Disabling these for now as they take up a lot of resources. Would be good to lazily load these pages and be able to unload them
       {
 	name: "Reddit",
 	icon: "https://vignette2.wikia.nocookie.net/siivagunner/images/0/07/Reddit_icon.svg/revision/latest?cb=20160623172208",
@@ -100,6 +101,7 @@ spaces = [
 	icon: "https://cdn-images-1.medium.com/fit/c/200/200/0*gR4ta5uBTkSqnxfe.png",
 	url: "https://www.brookings.edu/",
       },
+*/
     ],
   },
 ]
