@@ -14,7 +14,7 @@ app.on('ready', function() {
     frame: false,
   });
   mainWindow.loadURL('file://' + __dirname + '/browser.html');
-  mainWindow.openDevTools();
+  // mainWindow.openDevTools();
   mainWindow.webContents.on('new-window', (event, url) => {
     event.preventDefault();
     shell.openExternal(url);
